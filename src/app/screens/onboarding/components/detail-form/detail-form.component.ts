@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./detail-form.component.scss']
 })
 export class DetailFormComponent {
+  username:string='';//creating variable can also use const
+
+  constructor()
+  {
+
+  }
+
 
 }
