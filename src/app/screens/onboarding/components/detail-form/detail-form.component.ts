@@ -10,6 +10,11 @@ export class DetailFormComponent {
 
   constructor()
   {
+    this.username="Trupti"
+
+  }
+  displayName(): string {
+    return "Trupti"
 
   }
 
