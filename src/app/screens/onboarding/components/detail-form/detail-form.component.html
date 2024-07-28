@@ -1,11 +1,8 @@
-<!-- <app-header></app-header> -->
+<p class="text-5xl">Restaurent Detail Form </p>
 
-<!-- <p class="text-[4rem] text-center text-secondary-0 font-custom">
-    Welcome {{ displayName()}}
-  </p>
-   -->
+<form [formGroup]="restroDetails">
+    <label>Name: &nbsp;</label>
+<input id="restro-name"type="text" [formControl]="restroDetails.controls.name"]>
+<button id="submit" onclick="displayRestroName()"></button>
+</form>
   
-   <p class="text-5xl">Restaurant Onboarding Form</p>
-   <label>Name :</label>
-
-   <input id="restro-name",type="text">

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-detail-form',
@@ -6,17 +7,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./detail-form.component.scss']
 })
 export class DetailFormComponent {
-  username:string='';//creating variable can also use const
 
-  constructor()
-  {
-    this.username="Trupti"
+  username:string='';
 
+  restroDetails=new FormGroup({
+    name:new FormControl<string>(''),
+    owner:new FormControl<string>('')
+  })
+
+  constructor() {
+
+    this.username = 'Trupti';
   }
+
+  
+
   displayName(): string {
-    return "Trupti"
+    return 'John';
+  }
+  displayRestroName(){
+    console.log(this.restroDetails)
 
   }
-
 
 }

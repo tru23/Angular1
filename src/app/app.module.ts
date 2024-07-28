@@ -10,12 +10,13 @@ import { HeaderComponent } from './components/header/header.component';
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent
    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    OnboardingModule,
+    OnboardingModule
 
   ],
   providers: [],
