@@ -11,8 +11,8 @@ export class AppComponent {
 
   constructor(private router: Router){ }
  
- navigateForPage() {
-  this.router.navigate(['/onboarding/form']);
- }
+//  navigateFormPage() {
+// //   this.router.navigate(['/onboarding/form']);
+//  }
 
 }

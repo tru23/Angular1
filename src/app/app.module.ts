@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { OnboardingModule } from './screens/onboarding/onboarding.module';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HeaderComponent } from './components/header/header.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    OnboardingModule
+    ReactiveFormsModule
+   
 
   ],
   providers: [],
