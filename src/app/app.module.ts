@@ -7,6 +7,7 @@ import { OnboardingModule } from './screens/onboarding/onboarding.module';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,8 +18,9 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
-   
+    OnboardingModule,
+    HttpClientModule//service sathi
+    
 
   ],
   providers: [],
