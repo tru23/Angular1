@@ -4,6 +4,7 @@ import { OnboardingRoutingModule } from './onboarding-routing.module';
 import { DetailFormComponent } from './components/detail-form/detail-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [DetailFormComponent],
   imports: [

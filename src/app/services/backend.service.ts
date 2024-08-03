@@ -15,7 +15,7 @@ export class BackendService {
     console.log(restaurantRequest)//need to send this obj to backend
 
     this.http.
-    post("https://cbc8-2401-4900-1c42-1d1e-9d4b-d953-4ab2-da/restro/create",restaurantRequest,{
+    post('https://d1d5-2401-4900-1c42-1d1e-5d3b-5e67-b50-2eb.ngrok-free.app/restro/create',restaurantRequest,{
       responseType:'text'
     })
     //handleing response---expected and error
@@ -33,7 +33,7 @@ export class BackendService {
 
   }
   getRestroDetails(){
-    this.http.get('https://2866-2401-4900-1c44-8479-4d1e-678a-eb44-1d62.ngrok-free.app/restro/getRestroDetails',{
+    this.http.get('https://d1d5-2401-4900-1c42-1d1e-5d3b-5e67-b50-2eb.ngrok-free.app/restro/getAll',{
       responseType: 'json',headers:new HttpHeaders({
      "ngrok-skip-browser-warning": "true"
     })})
