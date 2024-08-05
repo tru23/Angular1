@@ -8,7 +8,7 @@ import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
@@ -20,7 +20,8 @@ import { AboutComponent } from './components/about/about.component';
     HomeComponent,
     FooterComponent,
     ContactComponent,
-    AboutComponent
+    AboutComponent,
+   
    
   ],
   imports: [

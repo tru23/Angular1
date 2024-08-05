@@ -22,13 +22,12 @@ export class DetailFormComponent {
     name: ['', [Validators.required, Validators.minLength(2)]],
     owner: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]], // Added email field with required and email validation
-    contact: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]], // Assuming a 10-digit phone number
+    phone: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]], // Assuming a 10-digit phone number
     type: ['', Validators.required],
-    address: this.formBuilder.group({
-      address_street: new FormControl<string>('', Validators.required),
-      address_City: new FormControl<string>('', Validators.required),
-      address_pin: new FormControl<number | null>(null, [Validators.required, Validators.pattern('^[0-9]{6}$')]) // Assuming a 6-digit pin code
-    })
+    street: ['', Validators.required],
+    city: ['', Validators.required],
+    zipcode: ['', [Validators.required,Validators.pattern('^[0-9]{6}$')]],
+    
   });
 
   constructor(private formBuilder: FormBuilder, private backendService: BackendService)// import karan dependencies contructor madhe import karat-servise is dependencies -known as dependency ingestion
@@ -52,12 +51,14 @@ export class DetailFormComponent {
   createRequest(details: FormGroup) { //created request   form->dto
     this.restaurantRequest.name = details.value['name'];
     this.restaurantRequest.owner = details.value['owner'];
+    this.restaurantRequest.street = details.value['street'];
+    this.restaurantRequest.city = details.value['city'];
+    this.restaurantRequest.zipcode = details.value['zipcode'];
     this.restaurantRequest.type = details.value['type'];
-    this.restaurantRequest.type = details.value['email'];
-    this.restaurantRequest.contact = Number(details.value['contact']);
-    this.restaurantRequest.city = details.value['address']['address_City'];
-    this.restaurantRequest.zipcode = details.value['address']['address_pin'];
-    this.restaurantRequest.street = details.value['address']['address_street'];
+    this.restaurantRequest.contact = details.value['phone'];
+    this.restaurantRequest.email=details.value['email'];
+    
+    
 
     this.processRequest(this.restaurantRequest);//processing this request
   }

@@ -1,15 +1,10 @@
-export interface AddressDetails {
-    id: number;
-    streetName: string;
-    city: string;
-    pin: number;
-  }
-  export interface RestaurantDetails {
-    id: number;
-    name: string;
-    ownerName: string;
-    addressDetails: AddressDetails;
-    type: string;
-    contact: string;
-    email: string;
+import { AddressDetails } from "./Address";
+
+export class RestaurantDetails {
+    name: string='';
+    owner: string='';
+    email: string='';
+    contact: number=0;
+    type: string='';
+    addressDetails: AddressDetails = new AddressDetails;
   }

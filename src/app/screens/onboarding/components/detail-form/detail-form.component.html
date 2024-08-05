@@ -6,7 +6,6 @@
     height: 120vh;
   }
 </style>
-
 <body class="background-image flex items-center justify-center">
   <div class="bg-white bg-opacity-75 p-8 rounded-lg shadow-lg max-w-2xl w-full mt-10 mb-5">
     <p class="text-5xl mb-6 text-center">Restaurant Detail Form</p>
@@ -36,28 +35,27 @@
 
       <!-- Contact -->
       <div>
-        <label for="contact" class="block text-lg font-medium text-gray-700">Contact: &nbsp;</label>
-        <input id="contact" type="number" formControlName="contact" class="mt-1 p-2 w-full border rounded-md shadow-sm"
-               [ngClass]="{'border-red-500': restroDetails.get('contact')?.invalid && (restroDetails.get('contact')?.dirty || restroDetails.get('contact')?.touched)}">
-        <div *ngIf="restroDetails.get('contact')?.invalid && (restroDetails.get('contact')?.dirty || restroDetails.get('contact')?.touched)"
+        <label for="phone" class="block text-lg font-medium text-gray-700">Contact: &nbsp;</label>
+        <input id="phone" type="text" formControlName="phone" class="mt-1 p-2 w-full border rounded-md shadow-sm"
+               [ngClass]="{'border-red-500': restroDetails.get('phone')?.invalid && (restroDetails.get('phone')?.dirty || restroDetails.get('phone')?.touched)}">
+        <div *ngIf="restroDetails.get('phone')?.invalid && (restroDetails.get('phone')?.dirty || restroDetails.get('phone')?.touched)"
              class="text-red-500 text-sm mt-1">
-          <small *ngIf="restroDetails.get('contact')?.errors?.['required']">Contact number is required.</small>
-          <small *ngIf="restroDetails.get('contact')?.errors?.['pattern']">Contact number must be a 10-digit number.</small>
+          <small *ngIf="restroDetails.get('phone')?.errors?.['required']">Contact number is required.</small>
+          <small *ngIf="restroDetails.get('phone')?.errors?.['pattern']">Contact number must be a 10-digit number.</small>
         </div>
       </div>
-<!-- Email -->
-<div>
-  <label for="email" class="block text-lg font-medium text-gray-700">Email: &nbsp;</label>
-  <input id="email" type="text" formControlName="email" class="mt-1 p-2 w-full border rounded-md shadow-sm"
-         [ngClass]="{'border-red-500': restroDetails.get('email')?.invalid && (restroDetails.get('email')?.dirty || restroDetails.get('email')?.touched)}">
-  <div *ngIf="restroDetails.get('email')?.invalid && (restroDetails.get('email')?.dirty || restroDetails.get('email')?.touched)"
-       class="text-red-500 text-sm mt-1">
-    <small *ngIf="restroDetails.get('email')?.errors?.['required']">Email is required.</small>
-    <small *ngIf="restroDetails.get('email')?.errors?.['email']">Invalid email format.</small>
-  </div>
-</div>
 
-      
+      <!-- Email -->
+      <div>
+        <label for="email" class="block text-lg font-medium text-gray-700">Email: &nbsp;</label>
+        <input id="email" type="text" formControlName="email" class="mt-1 p-2 w-full border rounded-md shadow-sm"
+               [ngClass]="{'border-red-500': restroDetails.get('email')?.invalid && (restroDetails.get('email')?.dirty || restroDetails.get('email')?.touched)}">
+        <div *ngIf="restroDetails.get('email')?.invalid && (restroDetails.get('email')?.dirty || restroDetails.get('email')?.touched)"
+             class="text-red-500 text-sm mt-1">
+          <small *ngIf="restroDetails.get('email')?.errors?.['required']">Email is required.</small>
+          <small *ngIf="restroDetails.get('email')?.errors?.['email']">Invalid email format.</small>
+        </div>
+      </div>
 
       <!-- Type -->
       <div>
@@ -73,39 +71,38 @@
       <!-- Address -->
       <div>
         <label class="block text-lg font-medium text-gray-700">Address: &nbsp;</label>
-        <div formGroupName="address" class="space-y-4">
-          <!-- Street -->
-          <div>
-            <label for="restro-street" class="block text-lg font-medium text-gray-700">Street: &nbsp;</label>
-            <input id="restro-street" type="text" formControlName="address_street" class="mt-1 p-2 w-full border rounded-md shadow-sm"
-                   [ngClass]="{'border-red-500': restroDetails.get('address.address_street')?.invalid && (restroDetails.get('address.address_street')?.dirty || restroDetails.get('address.address_street')?.touched)}">
-            <div *ngIf="restroDetails.get('address.address_street')?.invalid && (restroDetails.get('address.address_street')?.dirty || restroDetails.get('address.address_street')?.touched)"
-                 class="text-red-500 text-sm mt-1">
-              <small *ngIf="restroDetails.get('address.address_street')?.errors?.['required']">Street address is required.</small>
-            </div>
+     
+        <!-- Street -->
+        <div>
+          <label for="restro-street" class="block text-lg font-medium text-gray-700">Street: &nbsp;</label>
+          <input id="restro-street" type="text" formControlName="street" class="mt-1 p-2 w-full border rounded-md shadow-sm"
+                 [ngClass]="{'border-red-500': restroDetails.get('street')?.invalid && (restroDetails.get('street')?.dirty || restroDetails.get('street')?.touched)}">
+          <div *ngIf="restroDetails.get('street')?.invalid && (restroDetails.get('street')?.dirty || restroDetails.get('street')?.touched)"
+               class="text-red-500 text-sm mt-1">
+            <small *ngIf="restroDetails.get('street')?.errors?.['required']">Street address is required.</small>
           </div>
+        </div>
 
-          <!-- City -->
-          <div>
-            <label for="restro-city" class="block text-lg font-medium text-gray-700">City: &nbsp;</label>
-            <input id="restro-city" type="text" formControlName="address_City" class="mt-1 p-2 w-full border rounded-md shadow-sm"
-                   [ngClass]="{'border-red-500': restroDetails.get('address.address_City')?.invalid && (restroDetails.get('address.address_City')?.dirty || restroDetails.get('address.address_City')?.touched)}">
-            <div *ngIf="restroDetails.get('address.address_City')?.invalid && (restroDetails.get('address.address_City')?.dirty || restroDetails.get('address.address_City')?.touched)"
-                 class="text-red-500 text-sm mt-1">
-              <small *ngIf="restroDetails.get('address.address_City')?.errors?.['required']">City is required.</small>
-            </div>
+        <!-- City -->
+        <div>
+          <label for="restro-city" class="block text-lg font-medium text-gray-700">City: &nbsp;</label>
+          <input id="restro-city" type="text" formControlName="city" class="mt-1 p-2 w-full border rounded-md shadow-sm"
+                 [ngClass]="{'border-red-500': restroDetails.get('city')?.invalid && (restroDetails.get('city')?.dirty || restroDetails.get('city')?.touched)}">
+          <div *ngIf="restroDetails.get('city')?.invalid && (restroDetails.get('city')?.dirty || restroDetails.get('city')?.touched)"
+               class="text-red-500 text-sm mt-1">
+            <small *ngIf="restroDetails.get('city')?.errors?.['required']">City is required.</small>
           </div>
+        </div>
 
-          <!-- Pin Code -->
-          <div>
-            <label for="pin-code" class="block text-lg font-medium text-gray-700">Pin Code: &nbsp;</label>
-            <input id="pin-code" type="number" formControlName="address_pin" class="mt-1 p-2 w-full border rounded-md shadow-sm"
-                   [ngClass]="{'border-red-500': restroDetails.get('address.address_pin')?.invalid && (restroDetails.get('address.address_pin')?.dirty || restroDetails.get('address.address_pin')?.touched)}">
-            <div *ngIf="restroDetails.get('address.address_pin')?.invalid && (restroDetails.get('address.address_pin')?.dirty || restroDetails.get('address.address_pin')?.touched)"
-                 class="text-red-500 text-sm mt-1">
-              <small *ngIf="restroDetails.get('address.address_pin')?.errors?.['required']">Pin code is required.</small>
-              <small *ngIf="restroDetails.get('address.address_pin')?.errors?.['pattern']">Pin code must be a 6-digit number.</small>
-            </div>
+        <!-- Pin Code -->
+        <div>
+          <label for="pin-code" class="block text-lg font-medium text-gray-700">Pin Code: &nbsp;</label>
+          <input id="pin-code" type="text" formControlName="zipcode" class="mt-1 p-2 w-full border rounded-md shadow-sm"
+                 [ngClass]="{'border-red-500': restroDetails.get('zipcode')?.invalid && (restroDetails.get('zipcode')?.dirty || restroDetails.get('zipcode')?.touched)}">
+          <div *ngIf="restroDetails.get('zipcode')?.invalid && (restroDetails.get('zipcode')?.dirty || restroDetails.get('zipcode')?.touched)"
+               class="text-red-500 text-sm mt-1">
+            <small *ngIf="restroDetails.get('zipcode')?.errors?.['required']">Pin code is required.</small>
+            <small *ngIf="restroDetails.get('zipcode')?.errors?.['pattern']">Pin code must be a 6-digit number.</small>
           </div>
         </div>
       </div>

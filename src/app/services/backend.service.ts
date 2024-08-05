@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
 import { RestaurantRequest } from '../models/RestaurantRequest';
+import { Observable } from 'rxjs';
 import { HttpClient, HttpClientModule ,HttpHeaders} from '@angular/common/http';
+
+import { LoginRequest } from 'src/app/models/LoginRequest';
+import { RestaurantDetails } from '../models/RestaurantDetails';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +19,7 @@ export class BackendService {
     console.log(restaurantRequest)//need to send this obj to backend
 
     this.http.
-    post('https://d1d5-2401-4900-1c42-1d1e-5d3b-5e67-b50-2eb.ngrok-free.app/restro/create',restaurantRequest,{
+    post('https://70d7-2401-4900-1c42-70c6-e466-d110-8f1c-64a9.ngrok-free.app/restro/create',restaurantRequest,{
       responseType:'text'
     })
     //handleing response---expected and error
@@ -32,18 +36,19 @@ export class BackendService {
 
 
   }
-  getRestroDetails(){
-    this.http.get('https://d1d5-2401-4900-1c42-1d1e-5d3b-5e67-b50-2eb.ngrok-free.app/restro/getAll',{
-      responseType: 'json',headers:new HttpHeaders({
-     "ngrok-skip-browser-warning": "true"
-    })})
-    .subscribe({
-     next:(response)=> console.log(response),
-     error: (err)=>{
-       console.log(err)
-     }
-    })
- } 
+  getAllRestaurants(): Observable<RestaurantDetails[]> {
+    return this.http.get<RestaurantDetails[]>('https://70d7-2401-4900-1c42-70c6-e466-d110-8f1c-64a9.ngrok-free.app/restro/getAll', {
+      responseType: 'json',
+      headers: new HttpHeaders({
+        'ngrok-skip-browser-warning': 'true',
+      }),
+    });
+  }
+  login(credentials: LoginRequest): Observable<any> {
+    return this.http.post('', credentials, {
+      responseType: 'json'
+    });
+  }
 }
 
 //import http dependency to send request in constructor
