@@ -1,0 +1,21 @@
+<div class="container mx-auto p-4">
+    <div class="mb-6">
+      <h1 class="text-4xl font-bold text-left mb-2">Best Restaurants</h1>
+      <h2 class="text-2xl text-left">Check now</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div *ngFor="let restaurant of restaurants" class="max-w-sm rounded overflow-hidden shadow-lg bg-white">
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2">{{ restaurant.name }}</div>
+          <p class="text-gray-700 text-base">Owner: {{ restaurant.owner }}</p>
+          <p class="text-gray-700 text-base">City: {{ restaurant.addressDetails.city }}</p>
+          <p class="text-gray-700 text-base">Street: {{ restaurant.addressDetails.street }}</p>
+          <p class="text-gray-700 text-base">Zipcode: {{ restaurant.addressDetails.pincode }}</p>
+          <p class="text-gray-700 text-base">Type: {{ restaurant.type }}</p>
+          <p class="text-gray-700 text-base">Contact: {{ restaurant.contact }}</p>
+          <p class="text-gray-700 text-base">Email: {{ restaurant.email }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
